@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>_NET_CORE_CRUD_IRPF</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DOTNET-CORE_CRUD-IRPF.Domain\DOTNET-CORE_CRUD-IRPF.Domain.csproj" />
+    <ProjectReference Include="..\DOTNET-CORE_CRUD-IRPF.Repository\DOTNET-CORE_CRUD-IRPF.Repository.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0-rc.1.20451.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.0-rc.1.20451.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0-rc.1.20451.13" />
+  </ItemGroup>
+</Project>

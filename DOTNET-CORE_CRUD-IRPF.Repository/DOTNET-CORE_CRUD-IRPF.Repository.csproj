@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\DOTNET-CORE_CRUD-IRPF.Domain\DOTNET-CORE_CRUD-IRPF.Domain.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>DOTNET_CORE_CRUD_IRPF.Repository</RootNamespace>
+  </PropertyGroup>
+
+</Project>
