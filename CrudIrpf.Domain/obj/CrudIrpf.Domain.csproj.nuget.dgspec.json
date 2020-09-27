@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "/media/arthur/Arquivos/Repositorios/CRUD ANGULAR E .NET/back-end/CRUD-IRPF_DOTNET-CORE/CrudIrpf.Domain/CrudIrpf.Domain.csproj": {}
+  },
+  "projects": {
+    "/media/arthur/Arquivos/Repositorios/CRUD ANGULAR E .NET/back-end/CRUD-IRPF_DOTNET-CORE/CrudIrpf.Domain/CrudIrpf.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/media/arthur/Arquivos/Repositorios/CRUD ANGULAR E .NET/back-end/CRUD-IRPF_DOTNET-CORE/CrudIrpf.Domain/CrudIrpf.Domain.csproj",
+        "projectName": "CrudIrpf.Domain",
+        "projectPath": "/media/arthur/Arquivos/Repositorios/CRUD ANGULAR E .NET/back-end/CRUD-IRPF_DOTNET-CORE/CrudIrpf.Domain/CrudIrpf.Domain.csproj",
+        "packagesPath": "/home/arthur/.nuget/packages/",
+        "outputPath": "/media/arthur/Arquivos/Repositorios/CRUD ANGULAR E .NET/back-end/CRUD-IRPF_DOTNET-CORE/CrudIrpf.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/arthur/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.402/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

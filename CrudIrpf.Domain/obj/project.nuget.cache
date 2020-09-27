@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "dfb7jKU4ydZkXm+rjY9ZpvB+24lOLK3RE36FlvQ6OsfaRtKYwZxXn4EYzm7pwnagCkE9MH405xhHu2BXSqEidA==",
+  "success": true,
+  "projectFilePath": "/media/arthur/Arquivos/Repositorios/CRUD ANGULAR E .NET/back-end/CRUD-IRPF_DOTNET-CORE/CrudIrpf.Domain/CrudIrpf.Domain.csproj",
+  "expectedPackageFiles": [
+    "/home/arthur/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/home/arthur/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
