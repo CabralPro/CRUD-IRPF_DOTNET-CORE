@@ -17,7 +17,6 @@
 # dotnet ef --startup-project ../CrudIrpf.WebAPI migrations add init
   Dentro do Repository
 
-
 # dotnet ef --startup-project ../CrudIrpf.WebAPI database update
-
+  Dentro do Repository
 

@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using CrudIrpf.Repository;
 using CrudIrpf.Domain;
 
@@ -17,13 +16,26 @@ namespace CrudIrpf.Controllers
       this._repo = _repo;
     }
 
-
     [HttpGet]
     public async Task<IActionResult> Get()
     {
       try
       {
         var result = await _repo.GetAllIrpfAsync();
+        return Ok(result);
+      }
+      catch (System.Exception)
+      {
+        return this.StatusCode(StatusCodes.Status500InternalServerError);
+      }
+    }
+
+    [HttpGet("{IrpfId}")]
+    public async Task<IActionResult> Get(int IrpfId)
+    {
+      try
+      {
+        var result = await _repo.GetIrpfByIdAsync(IrpfId);
         return Ok(result);
       }
       catch (System.Exception)
@@ -39,7 +51,7 @@ namespace CrudIrpf.Controllers
       {
         _repo.Add(irpf);
         if (await _repo.SaveChangesAsync())
-          return Created($"/irpf", irpf);
+          return Created($"/irpf/{irpf.Id}", irpf);
       }
       catch (System.Exception)
       {
@@ -49,14 +61,18 @@ namespace CrudIrpf.Controllers
     }
 
     [HttpPut]
-    public async Task<IActionResult> Put(Irpf irpf)
+    public async Task<IActionResult> Put(Irpf model)
     {
       try
       {
-        // var ipf = await _repo.ge
-        _repo.Add(irpf);
+        var irpf = await _repo.GetIrpfByIdAsync(model.Id);
+        if (irpf == null)
+          return NotFound();
+
+        _repo.Update(model);
+ 
         if (await _repo.SaveChangesAsync())
-          return Created($"/irpf", irpf);
+          return Created($"/irpf/{model.Id}", model);
       }
       catch (System.Exception)
       {
@@ -65,6 +81,25 @@ namespace CrudIrpf.Controllers
       return BadRequest();
     }
 
+    [HttpDelete("{IrpfId}")]
+    public async Task<IActionResult> Delete(int IrpfId)
+    {
+      try
+      {
+        var irpf = await _repo.GetIrpfByIdAsync(IrpfId);
+        if (irpf == null)
+          return NotFound();
 
+        _repo.Delete(irpf);
+
+        if (await _repo.SaveChangesAsync())
+          return Ok();
+      }
+      catch (System.Exception)
+      {
+        return this.StatusCode(StatusCodes.Status500InternalServerError);
+      }
+      return BadRequest();
+    }
   }
 }

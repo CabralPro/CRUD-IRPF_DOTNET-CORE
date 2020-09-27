@@ -10,6 +10,6 @@ namespace CrudIrpf.Repository
     void Delete<T>(T entity) where T : class;
     Task<bool> SaveChangesAsync();
     Task<Irpf[]> GetAllIrpfAsync();
-
+    Task<Irpf> GetIrpfByIdAsync(int IrpfId);
   }
 }
