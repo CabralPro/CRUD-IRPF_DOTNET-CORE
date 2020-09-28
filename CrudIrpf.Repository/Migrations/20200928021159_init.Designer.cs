@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrudIrpf.Repository.Migrations
 {
     [DbContext(typeof(CrudIrpfContext))]
-    [Migration("20200927195727_init")]
+    [Migration("20200928021159_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

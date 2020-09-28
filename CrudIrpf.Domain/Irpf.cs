@@ -2,7 +2,6 @@ using System;
 
 namespace CrudIrpf.Domain
 {
-  // public class Irpf : BaseEntity
   public class Irpf
   {
     public int Id { get; set; }
@@ -17,10 +16,4 @@ namespace CrudIrpf.Domain
     public string Bairro { get; set; }
     public string Cep { get; set; }
   }
-
-  // public class BaseEntity
-  // {
-  //   public DateTime DtCadastro { get; set; }
-  //   public DateTime DtAlteracao { get; set; }
-  // }
 }

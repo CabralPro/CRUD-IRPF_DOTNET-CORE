@@ -7,56 +7,38 @@ namespace CrudIrpf.Repository
 {
   public class CrudIrpfRepository : ICrudIrpfRepository
   {
-    private readonly CrudIrpfContext _crudIrpfContext;
+    private readonly CrudIrpfContext _context;
     public CrudIrpfRepository(CrudIrpfContext crudIrpfContext)
     {
-      _crudIrpfContext = crudIrpfContext;
-      _crudIrpfContext.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+      _context = crudIrpfContext;
+      _context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
     }
     public void Add<T>(T entity) where T : class
     {
-      _crudIrpfContext.Add(entity);
+      _context.Add(entity);
     }
 
     public void Update<T>(T entity) where T : class
     {
-      _crudIrpfContext.Update(entity);
+      _context.Update(entity);
     }
     public void Delete<T>(T entity) where T : class
     {
-      _crudIrpfContext.Remove(entity);
+      _context.Remove(entity);
     }
 
     public async Task<bool> SaveChangesAsync()
     {
-      // var entries = ChangeTracker
-      //     .Entries()
-      //     .Where(e => e.Entity is BaseEntity && (
-      //             e.State == EntityState.Added
-      //             || e.State == EntityState.Modified));
-
-      // foreach (var entityEntry in entries)
-      // {
-      //     ((BaseEntity)entityEntry.Entity).UpdatedDate = DateTime.Now;
-
-      //     if (entityEntry.State == EntityState.Added)
-      //     {
-      //         ((BaseEntity)entityEntry.Entity).CreatedDate = DateTime.Now;
-      //     }
-      // }
-      // return base.SaveChanges();
-      
-      return (await _crudIrpfContext.SaveChangesAsync()) > 0;
+      return (await _context.SaveChangesAsync()) > 0;
     }
     public async Task<Irpf[]> GetAllIrpfAsync()
     {
-      IQueryable<Irpf> query = _crudIrpfContext.Irpfs;
-      // query = query.OrderByDescending(e => e.DtCadastro);
+      IQueryable<Irpf> query = _context.Irpfs;
       return await query.ToArrayAsync();
     }
     public async Task<Irpf> GetIrpfByIdAsync(int IrpfId)
     {
-      IQueryable<Irpf> query = _crudIrpfContext.Irpfs;
+      IQueryable<Irpf> query = _context.Irpfs;
       query = query.Where(e => e.Id == IrpfId);
       return await query.FirstOrDefaultAsync();
     }

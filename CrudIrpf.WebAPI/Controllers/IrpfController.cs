@@ -11,9 +11,9 @@ namespace CrudIrpf.Controllers
   public class IrpfController : ControllerBase
   {
     private readonly ICrudIrpfRepository _repo;
-    public IrpfController(ICrudIrpfRepository _repo)
+    public IrpfController(ICrudIrpfRepository repo)
     {
-      this._repo = _repo;
+      this._repo = repo;
     }
 
     [HttpGet]
@@ -70,7 +70,7 @@ namespace CrudIrpf.Controllers
           return NotFound();
 
         _repo.Update(model);
- 
+
         if (await _repo.SaveChangesAsync())
           return Created($"/irpf/{model.Id}", model);
       }
@@ -93,7 +93,7 @@ namespace CrudIrpf.Controllers
         _repo.Delete(irpf);
 
         if (await _repo.SaveChangesAsync())
-          return Ok();
+          return Ok("{}");
       }
       catch (System.Exception)
       {
