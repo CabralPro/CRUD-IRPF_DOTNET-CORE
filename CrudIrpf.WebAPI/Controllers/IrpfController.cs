@@ -7,7 +7,7 @@ using CrudIrpf.Domain;
 namespace CrudIrpf.Controllers
 {
   [ApiController]
-  [Route("[controller]")]
+  [Route("api/[controller]")]
   public class IrpfController : ControllerBase
   {
     private readonly ICrudIrpfRepository _repo;
