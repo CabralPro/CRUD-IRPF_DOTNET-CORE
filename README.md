@@ -1,6 +1,6 @@
 # CRUD-IRPF_DOTNET-CORE
 
-CRUD completo de um sistema simples de cadastro de imposto de renda de pessoa fisia (IRPF).
+CRUD completo de um sistema simples de cadastro de imposto de renda de pessoa fisica (IRPF).
 
 ### Front-End em Angular desse projeto :
 
